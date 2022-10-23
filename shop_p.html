@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="shop_p.css">
+	</head>
+	<body>
+    <div class="nav">
+        <a href="#">logo<img src=""></a>
+        <a href="#"></a>
+    </div>
+    
+    <h1>劍網3X</h1>
+    <div class="itemarea">
+    <div class="pic1">
+    <div class="pic">
+        <img src="https://img.alicdn.com/imgextra/i3/124896744/O1CN01ytBA6Q1zgngQg1jHT_!!124896744.jpg" >
+    </div>
+    </div>
+    <div class="list2">
+        <ul class="list">
+            <li class="current">
+                <img src="https://img.alicdn.com/imgextra/i3/124896744/O1CN01ytBA6Q1zgngQg1jHT_!!124896744.jpg">
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/imgextra/i3/124896744/O1CN019WSJoi1zgngOsz1S9_!!124896744.jpg">
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/imgextra/i4/124896744/O1CN01hNmpKR1zgngOt0hNs_!!124896744.jpg">
+            </li>
+            <li>
+                <img src="https://img.alicdn.com/imgextra/i1/124896744/O1CN01LWZxZL1zgngN7S6Cw_!!124896744.jpg">
+            </li>
+        </ul>
+    </div>
+    <div class="detail"></div>
+    <div class="clear"></div>
+</div>
+
+    <div class="chose">
+        <div class="corr">
+        <h1 class="name"><u>天策衍生漢服<br>馳騁圓領袍(春秋)</u></h1>
+        <h2 class="price">HK $400</h2>
+        <div class="dropdown">
+            <h2 class="size">尺碼:</h2>
+            <select class="option">
+                <option><a class="dropdown-item" href="#">選擇尺碼</a></option>
+                <option><a class="dropdown-item" href="#">S</a></option>
+                <option><a class="dropdown-item" href="#">M</a></option>
+                <option><a class="dropdown-item" href="#">L</a></option>
+                <option><a class="dropdown-item" href="#">XL</a></option>
+            </select>
+            <br>
+            <h2 class="number">數量:</h2>
+            <select class="option">
+                <option><a class="dropdown-item" href="#">選擇數量</a></option>
+                <option><a class="dropdown-item" href="#">1</a></option>
+                <option><a class="dropdown-item" href="#">2</a></option>
+                <option><a class="dropdown-item" href="#">3</a></option>
+                <option><a class="dropdown-item" href="#">4</a></option>
+                <option><a class="dropdown-item" href="#">5</a></option>
+            </select>
+            <br>
+            <button type="button" class="btn">加入購物車</button>
+        </div>
+        </div>
+        <div class="clear"></div>
+        </div>
+
+        <div class="illustration">
+            <img src="https://img.alicdn.com/imgextra/i4/124896744/O1CN01RpLbBc1zgnlPPE6NJ_!!124896744.jpg" width="800px">
+            <img src="https://img.alicdn.com/imgextra/i3/124896744/O1CN01O9VshA1zgno6DCNPu_!!124896744.png" width="800px">
+            <img src="https://img.alicdn.com/imgextra/i1/124896744/O1CN01CWlQbT1zgngT5OEaK_!!124896744.jpg" width="800px">
+            <img src="https://img.alicdn.com/imgextra/i4/124896744/O1CN01Pjqnyn1zgnoF2J3sn_!!124896744.png" width="800px">
+            <img src="https://img.alicdn.com/imgextra/i4/124896744/O1CN01GZ6Ya41zgnglWhcmb_!!124896744.jpg" width="800px">
+            
+        </div>
+	
+    <script>
+        /*放大圖片效果*/
+        var list = document.querySelector('.list'),
+        /**滑鼠移動*/
+        imgs = list.querySelectorAll('img'),
+        img = document.querySelector('.pic img')
+        pic = document.querySelector('.itemarea.pic')
+        cover = document.querySelector('.cover')
+        list.addEventListener('mousemove',function(e){
+            if(e.target.tagName == 'IMG'){
+                img.src = e.target.src;
+                imgs.forEach(function(item){
+                item.className = '';
+                })
+                e.target.className='current';
+            }
+        })
+        pic.addEventListener('mousemove',function(e){
+            var x =e.clientX, Y =e.clientY;
+            cx = pic.getBoundingClientRect().left,
+            cy = pic.getBoundingClientRect().top;
+            //console.log(x.clientX,e.clientY)
+            //console.log(pic.getBoundingClientRect().left,pic.getBoundingClientRect().top)
+            cover.style.left = x - cx + 'px';
+            cover.style.top = y - cy + 'px'; 
+        })
+
+        /*for(var i=0;i<list.length;i++){
+            list[i].onmouseover = function(){
+                console.log(list[i]);
+            }
+        }*/
+    </script>
+
+	</body>
+    
+</html>
