@@ -1,3 +1,4 @@
+console.log("123")
 const signInBtn = document.getElementById("signIn");
 const signUpBtn = document.getElementById("signUp");
 const firstForm = document.getElementById("form1");
